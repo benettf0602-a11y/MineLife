@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MineLife — Magyar Minecraft Launcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- CANVAS HÁTTÉR -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">⛏</span>
+        <span class="logo-text">Mine<span class="accent">Life</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Funkciók</a></li>
+        <li><a href="#versions">Verziók</a></li>
+        <li><a href="#download">Letöltés</a></li>
+      </ul>
+      <a href="#download" class="nav-cta">Letöltés</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        v1.1.0 — Most elérhető
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Magyar</span>
+        <span class="title-line accent-line">Minecraft</span>
+        <span class="title-line">Launcher</span>
+      </h1>
+      <p class="hero-sub">
+        Nyílt forráskódú, gyors és testre szabható.<br>
+        Vanilla · Forge · Fabric — egy helyen.
+      </p>
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary">
+          <span>⬇ Letöltés — Windows</span>
+        </a>
+        <a href="https://github.com" target="_blank" class="btn btn-ghost">
+          <span>GitHub →</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">1.21.4</span><span class="stat-label">Legújabb MC</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">Forge</span><span class="stat-label">& Fabric</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">MIT</span><span class="stat-label">Licenc</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Görgess</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Funkciók</span>
+        <h2 class="section-title">Minden amit egy<br><span class="accent">launcherhez</span> elvársz</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card card-large" data-delay="0">
+          <div class="feature-icon">🎮</div>
+          <h3>Minecraft Indítás</h3>
+          <p>Vanilla, Forge és Fabric verziók egyetlen kattintással. Teljes Java kezelés, offline UUID generálás.</p>
+          <div class="feature-glow"></div>
+        </div>
+        <div class="feature-card" data-delay="100">
+          <div class="feature-icon">⚙️</div>
+          <h3>Teljes Beállítások</h3>
+          <p>Java útvonal, RAM kiosztás, game könyvtár, fullscreen mód — minden kéznél.</p>
+          <div class="feature-glow"></div>
+        </div>
+        <div class="feature-card" data-delay="150">
+          <div class="feature-icon">👤</div>
+          <h3>Profilkezelés</h3>
+          <p>Több profil, jelszóval védve. Offline mód, nincs szükség Microsoft fiókra.</p>
+          <div class="feature-glow"></div>
+        </div>
+        <div class="feature-card" data-delay="200">
+          <div class="feature-icon">📦</div>
+          <h3>Modpack Böngésző</h3>
+          <p>Népszerű modpackek egy kattintásos telepítéssel. CurseForge & Modrinth API ready.</p>
+          <div class="feature-glow"></div>
+        </div>
+        <div class="feature-card" data-delay="250">
+          <div class="feature-icon">📰</div>
+          <h3>Hírek</h3>
+          <p>Legfrissebb Minecraft és közösségi hírek közvetlenül a launcherben.</p>
+          <div class="feature-glow"></div>
+        </div>
+        <div class="feature-card card-wide" data-delay="300">
+          <div class="feature-icon">🗂️</div>
+          <h3>Instance Manager</h3>
+          <p>Több Minecraft telepítés kezelése egyszerre. Import, export, frissítés — teljes kontroll.</p>
+          <div class="feature-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERSIONS -->
+  <section class="versions" id="versions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Verziók</span>
+        <h2 class="section-title">Támogatott<br><span class="accent">verziók</span></h2>
+      </div>
+
+      <div class="versions-tabs">
+        <button class="tab active" data-tab="vanilla">Vanilla</button>
+        <button class="tab" data-tab="forge">Forge</button>
+        <button class="tab" data-tab="fabric">Fabric</button>
+      </div>
+
+      <div class="versions-grid" id="versions-grid">
+        <!-- JS tölti -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download-inner">
+        <div class="download-left">
+          <span class="section-tag">Letöltés</span>
+          <h2 class="download-title">Kezdj el<br><span class="accent">játszani</span><br>most!</h2>
+          <p class="download-sub">Ingyenes, nyílt forráskódú, reklámok nélkül.<br>Python 3.8+ szükséges.</p>
+          <div class="req-list">
+            <div class="req-item"><span class="req-ok">✓</span> Python 3.8+</div>
+            <div class="req-item"><span class="req-ok">✓</span> Windows / Linux / macOS</div>
+            <div class="req-item"><span class="req-ok">✓</span> Java (a Minecraft-hoz)</div>
+          </div>
+        </div>
+        <div class="download-right">
+          <div class="dl-card main-dl">
+            <div class="dl-card-header">
+              <span class="dl-os-icon">🪟</span>
+              <div>
+                <div class="dl-os-name">Windows</div>
+                <div class="dl-version">MineLife v1.1.0 • .exe</div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary btn-full" id="dl-win">
+              <span>⬇ Letöltés — MineLife.exe</span>
+            </a>
+            <div class="dl-meta">~12 MB • SHA256 ellenőrzött</div>
+          </div>
+
+          <div class="dl-alt-row">
+            <div class="dl-card dl-small">
+              <span class="dl-os-icon">🐧</span>
+              <div class="dl-os-name">Linux</div>
+              <a href="#" class="btn btn-ghost btn-sm">Letöltés</a>
+            </div>
+            <div class="dl-card dl-small">
+              <span class="dl-os-icon">🍎</span>
+              <div class="dl-os-name">macOS</div>
+              <a href="#" class="btn btn-ghost btn-sm">Letöltés</a>
+            </div>
+            <div class="dl-card dl-small">
+              <span class="dl-os-icon">📦</span>
+              <div class="dl-os-name">Forráskód</div>
+              <a href="https://github.com" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-icon">⛏</span>
+          <span class="logo-text">Mine<span class="accent">Life</span></span>
+        </div>
+        <p class="footer-copy">MIT Licenc — Ingyenes és nyílt forráskódú</p>
+        <div class="footer-links">
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://modrinth.com" target="_blank">Modrinth</a>
+          <a href="https://minecraft.net" target="_blank">Mojang</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Készítve ❤️-vel és Pythonnal · Nem kapcsolódik a Mojanghoz
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
